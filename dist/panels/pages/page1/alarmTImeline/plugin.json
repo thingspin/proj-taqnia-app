@@ -1,0 +1,13 @@
+{
+  "type": "panel",
+  "name": "(Taqnia) Alarm timeline",
+  "id": "proj-taqnia-page1-timeline-panel",
+
+  "info": {
+    "description": "",
+    "author": {
+      "name": "gunwoo@hancommds.com",
+      "url": "http://thingspin.io"
+    }
+  }
+}

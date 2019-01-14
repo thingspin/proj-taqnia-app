@@ -1,0 +1,13 @@
+{
+  "type": "panel",
+  "name": "(Taqnia) Scada",
+  "id": "proj-taqnia-page1-scada-panel",
+
+  "info": {
+    "description": "",
+    "author": {
+      "name": "gunwoo@hancommds.com",
+      "url": "http://thingspin.io"
+    }
+  }
+}

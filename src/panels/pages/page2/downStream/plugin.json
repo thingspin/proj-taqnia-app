@@ -1,0 +1,13 @@
+{
+  "type": "panel",
+  "name": "(Taqnia) downstream",
+  "id": "proj-taqnia-page2-downstream-panel",
+
+  "info": {
+    "description": "",
+    "author": {
+      "name": "gunwoo@hancommds.com",
+      "url": "http://thingspin.io"
+    }
+  }
+}
