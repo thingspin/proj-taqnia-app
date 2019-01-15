@@ -1,2 +1,6 @@
+@import url(./bootstrap-iso.css);
+.timeline-cards {
+  display: -webkit-inline-box;
+  overflow: auto; }
 
 /*# sourceMappingURL=app.office.css.map */

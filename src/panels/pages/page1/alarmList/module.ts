@@ -1,46 +1,32 @@
-import { MetricsPanelCtrl, loadPluginCss } from 'grafana/app/plugins/sdk';
-import { appId, baseCssFilename } from "../../../common";
+const plugin = require("./plugin.json");
 
-loadPluginCss({
-    dark: `plugins/${appId}/css/${baseCssFilename}.dark.css`,
-    light: `plugins/${appId}/css/${baseCssFilename}.light.css`,
-});
+import { BaseTsPanelPlugin } from "../../../common";
+import { IScope } from 'angular';
 
-class ProjTaqniaPage1AlarmListPanelCtrl extends MetricsPanelCtrl {
+class TaqniaPage1AlarmListPanelCtrl extends BaseTsPanelPlugin {
     static template = require(`./partial/template.html`);
-    divID: String = "taqnia-page1-alarm-list-panel";
+    server: any = [];
 
-    private _container: any;
-    set container(container: any) { this._container = container; }
-    get container() { return this._container; }
+    constructor($scope: IScope, $injector, $element: JQLite) {
+        super($scope, $injector, $element, plugin.id);
 
-    constructor($scope, $injector, private $element ) {
-        super($scope, $injector);
-
-        this.events.on('panel-initialized', this.onInitialized.bind(this));
+        this.events.on(`${plugin.id}-initialized`, this.onInitialized.bind(this));
         this.events.on('data-received', this.onDataReceived.bind(this));
     }
 
     /* Angularjs(1.x) Initialize Function */
     $onInit(): void {
-        console.log(`${this.divID} onInited...`);
+        console.log(`${plugin.name} onInited...`);
     }
-
 
     onInitialized() {
-        const node: any = this.$element.find("ng-transclude > div");
-        if (node.length === 0) {
-            console.error(`cannot find element id '#${this.divID}'`);
-            return;
-        }
-        this.container = node;
     }
 
-    onDataReceived(dataList: any) {
-        console.log(dataList);
+    onDataReceived(dataList) {
+        // console.log(dataList);
     }
 }
 
 export {
-    ProjTaqniaPage1AlarmListPanelCtrl as PanelCtrl
+    TaqniaPage1AlarmListPanelCtrl as PanelCtrl
 };

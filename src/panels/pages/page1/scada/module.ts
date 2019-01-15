@@ -1,43 +1,34 @@
-import { MetricsPanelCtrl, loadPluginCss } from 'grafana/app/plugins/sdk';
-import { appId, baseCssFilename } from "../../../common";
-import Snap, { Fragment } from "snapsvg";
+const plugin = require("./plugin.json");
 
-loadPluginCss({
-    dark: `plugins/${appId}/css/${baseCssFilename}.dark.css`,
-    light: `plugins/${appId}/css/${baseCssFilename}.light.css`
-});
+import { appId, BaseTsPanelPlugin } from "../../../common";
+import Snap from "snapsvg";
+import { IScope } from 'angular';
 
-class TaqniaPage1ScadaPanelCtrl extends MetricsPanelCtrl {
+class TaqniaPage1ScadaPanelCtrl extends BaseTsPanelPlugin {
     static template = require(`./partial/template.html`);
-    divID: String = "taqnia-page1-scada-panel";
-    svgFilePath: String = `public/plugins/${appId}/img/scada.svg`;
-
-    private _container: JQLite;
-    set container(container: JQLite) { this._container = container; }
-    get container() { return this._container; }
+    private svgFilePath: String = `public/plugins/${appId}/img/scada.svg`;
 
     private _svg: any = null;
     set svg(svg: any) { this._svg = svg; }
     get svg() {return this._svg; }
 
-    // initialize sequence : constructor -> $onInit -> onInitialized
-    constructor($scope, $injector, private $element: JQLite ) {
-        super($scope, $injector);
+    // initialize sequence :
+    //      constructor -> $onInit() -> events.on('panel-initialized') -> events.on(`${plugin.id}-initialized`)
+    constructor($scope: IScope, $injector, $element: JQLite ) {
+        super($scope, $injector, $element, plugin.id);
 
-        this.events.on('panel-initialized', this.onInitialized.bind(this));
+        this.events.on(`${plugin.id}-initialized`, this.onInitialized.bind(this));
         this.events.on('data-received', this.onDataReceived.bind(this));
     }
 
     /* Angularjs(1.x) Initialize Function */
-    public $onInit() {
-        console.log(`${this.divID} onInited...`);
+    public $onInit(): void {
+        console.log(`${plugin.name} onInited...`);
     }
 
-    private async onInitialized() {
-        this.container = this.getContainer();
-
+    private async onInitialized(): Promise<void> {
         try {
-            const svg = await this.loadSvg(this.svgFilePath as string);
+            const svg = await this.loadSvg(this.svgFilePath);
             const node = this.container.append(svg.node);
 
             // svg first child
@@ -47,22 +38,13 @@ class TaqniaPage1ScadaPanelCtrl extends MetricsPanelCtrl {
         }
     }
 
-    private getContainer(): JQLite | null {
-        const node: JQLite = this.$element.find("ng-transclude > div");
-        if (node.length === 0) {
-            console.error(`cannot find element id '#${this.divID}'`);
-            return null;
-        }
-        return node;
-    }
-
-    public async loadSvg(path: string): Promise<any> {
-        return new Promise((resolve, reject) => {
-            Snap.load(path, resolve);
+    public async loadSvg(path: String): Promise<any> {
+        return new Promise((resolve) => {
+            Snap.load(path as string, resolve);
         });
     }
 
-    private onDataReceived(dataList: any) {
+    private onDataReceived(dataList: any): void {
         // console.log(dataList);
     }
 }
