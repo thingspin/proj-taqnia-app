@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "app.light.css",
+	"sources": [
+		"../../src/sass/app.light.scss",
+		"../../src/sass/common.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

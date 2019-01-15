@@ -93,7 +93,7 @@ define(["app/core/core_module","app/plugins/sdk"], function(__WEBPACK_EXTERNAL_M
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"<div class=\\\"page-header\\\">\\n\\tHello Config Page\\n</div>\";\n\n//# sourceURL=webpack:///./app-config/config.html?");
+module.exports = "<div class=\"page-header\">\n\tTaqnia Application\n</div>";
 
 /***/ }),
 
@@ -105,7 +105,29 @@ eval("module.exports = \"<div class=\\\"page-header\\\">\\n\\tHello Config Page\
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"AppConfigCtrl\", function() { return AppConfigCtrl; });\nvar AppConfigCtrl = /** @class */ (function () {\n    function AppConfigCtrl($q) {\n        this.$q = $q;\n        this.appEditCtrl.setPreUpdateHook(this.preUpdate.bind(this));\n        this.appEditCtrl.setPostUpdateHook(this.postUpdate.bind(this));\n        if (!this.appModel.jsonData) {\n            this.appModel.jsonData = {};\n        }\n    }\n    AppConfigCtrl.prototype.preUpdate = function () {\n        return this.$q.resolve();\n    };\n    AppConfigCtrl.prototype.postUpdate = function () {\n        return this.$q.resolve();\n    };\n    AppConfigCtrl.template = __webpack_require__(/*! ./config.html */ \"./app-config/config.html\");\n    return AppConfigCtrl;\n}());\n// AppConfigCtrl.templateURL = './pages/config.html';\n\n\n\n//# sourceURL=webpack:///./app-config/config.ts?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppConfigCtrl", function() { return AppConfigCtrl; });
+var AppConfigCtrl = /** @class */ (function () {
+    function AppConfigCtrl($q) {
+        this.$q = $q;
+        this.appEditCtrl.setPreUpdateHook(this.preUpdate.bind(this));
+        this.appEditCtrl.setPostUpdateHook(this.postUpdate.bind(this));
+        if (!this.appModel.jsonData) {
+            this.appModel.jsonData = {};
+        }
+    }
+    AppConfigCtrl.prototype.preUpdate = function () {
+        return this.$q.resolve();
+    };
+    AppConfigCtrl.prototype.postUpdate = function () {
+        return this.$q.resolve();
+    };
+    AppConfigCtrl.template = __webpack_require__(/*! ./config.html */ "./app-config/config.html");
+    return AppConfigCtrl;
+}());
+// AppConfigCtrl.templateURL = './pages/config.html';
+
+
 
 /***/ }),
 
@@ -117,7 +139,24 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! grafana/app/plugins/sdk */ \"grafana/app/plugins/sdk\");\n/* harmony import */ var grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _services_projTaqniaAppSrv__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/projTaqniaAppSrv */ \"./services/projTaqniaAppSrv.ts\");\n/* harmony import */ var _app_config_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-config/config */ \"./app-config/config.ts\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"ConfigCtrl\", function() { return _app_config_config__WEBPACK_IMPORTED_MODULE_2__[\"AppConfigCtrl\"]; });\n\n\n// register Remote Solution Services\n\n\nvar appId = \"thingspin-opc-channel-app\";\nObject(grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__[\"loadPluginCss\"])({\n    dark: \"plugins/\" + appId + \"/css/app.dark.css\",\n    light: \"plugins/\" + appId + \"/css/app.light.css\"\n});\n\n\n\n//# sourceURL=webpack:///./module.ts?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! grafana/app/plugins/sdk */ "grafana/app/plugins/sdk");
+/* harmony import */ var grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_projTaqniaAppSrv__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/projTaqniaAppSrv */ "./services/projTaqniaAppSrv.ts");
+/* harmony import */ var _app_config_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-config/config */ "./app-config/config.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ConfigCtrl", function() { return _app_config_config__WEBPACK_IMPORTED_MODULE_2__["AppConfigCtrl"]; });
+
+
+// register Remote Solution Services
+
+
+var appId = "thingspin-opc-channel-app";
+Object(grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__["loadPluginCss"])({
+    dark: "plugins/" + appId + "/css/app.dark.css",
+    light: "plugins/" + appId + "/css/app.light.css"
+});
+
+
 
 /***/ }),
 
@@ -129,7 +168,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var graf
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ProjTaqniaAppSrvCtrl\", function() { return ProjTaqniaAppSrvCtrl; });\n/* harmony import */ var grafana_app_core_core_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! grafana/app/core/core_module */ \"grafana/app/core/core_module\");\n/* harmony import */ var grafana_app_core_core_module__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(grafana_app_core_core_module__WEBPACK_IMPORTED_MODULE_0__);\n\nvar ProjTaqniaAppSrvCtrl = /** @class */ (function () {\n    function ProjTaqniaAppSrvCtrl() {\n    }\n    return ProjTaqniaAppSrvCtrl;\n}());\n\ngrafana_app_core_core_module__WEBPACK_IMPORTED_MODULE_0___default.a.service('projTaqniaAppSrv', ProjTaqniaAppSrvCtrl);\n\n\n//# sourceURL=webpack:///./services/projTaqniaAppSrv.ts?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjTaqniaAppSrvCtrl", function() { return ProjTaqniaAppSrvCtrl; });
+/* harmony import */ var grafana_app_core_core_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! grafana/app/core/core_module */ "grafana/app/core/core_module");
+/* harmony import */ var grafana_app_core_core_module__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(grafana_app_core_core_module__WEBPACK_IMPORTED_MODULE_0__);
+
+var ProjTaqniaAppSrvCtrl = /** @class */ (function () {
+    function ProjTaqniaAppSrvCtrl() {
+    }
+    return ProjTaqniaAppSrvCtrl;
+}());
+
+grafana_app_core_core_module__WEBPACK_IMPORTED_MODULE_0___default.a.service('projTaqniaAppSrv', ProjTaqniaAppSrvCtrl);
+
 
 /***/ }),
 
@@ -140,7 +191,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = __WEBPACK_EXTERNAL_MODULE_grafana_app_core_core_module__;\n\n//# sourceURL=webpack:///external_%22app/core/core_module%22?");
+module.exports = __WEBPACK_EXTERNAL_MODULE_grafana_app_core_core_module__;
 
 /***/ }),
 
@@ -151,8 +202,9 @@ eval("module.exports = __WEBPACK_EXTERNAL_MODULE_grafana_app_core_core_module__;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = __WEBPACK_EXTERNAL_MODULE_grafana_app_plugins_sdk__;\n\n//# sourceURL=webpack:///external_%22app/plugins/sdk%22?");
+module.exports = __WEBPACK_EXTERNAL_MODULE_grafana_app_plugins_sdk__;
 
 /***/ })
 
 /******/ })});;
+//# sourceMappingURL=module.js.map

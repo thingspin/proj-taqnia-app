@@ -86,6 +86,23 @@ define(["app/plugins/sdk"], function(__WEBPACK_EXTERNAL_MODULE_grafana_app_plugi
 /************************************************************************/
 /******/ ({
 
+/***/ "./panels/common/index.ts":
+/*!********************************!*\
+  !*** ./panels/common/index.ts ***!
+  \********************************/
+/*! exports provided: appId, baseCssFilename */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "appId", function() { return appId; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "baseCssFilename", function() { return baseCssFilename; });
+var appId = "proj-taqnia-app";
+var baseCssFilename = "app";
+
+
+/***/ }),
+
 /***/ "./panels/pages/page2/upStream/module.ts":
 /*!***********************************************!*\
   !*** ./panels/pages/page2/upStream/module.ts ***!
@@ -94,7 +111,63 @@ define(["app/plugins/sdk"], function(__WEBPACK_EXTERNAL_MODULE_grafana_app_plugi
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"PanelCtrl\", function() { return ProjTaqniaPage2UpstreamPanelCtrl; });\n/* harmony import */ var grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! grafana/app/plugins/sdk */ \"grafana/app/plugins/sdk\");\n/* harmony import */ var grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__);\nvar __extends = (undefined && undefined.__extends) || (function () {\n    var extendStatics = Object.setPrototypeOf ||\n        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||\n        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };\n    return function (d, b) {\n        extendStatics(d, b);\n        function __() { this.constructor = d; }\n        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());\n    };\n})();\n\nvar appId = \"proj-taqnia-app\";\nvar baseCssFilename = \"proj-xxx-app\";\nObject(grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__[\"loadPluginCss\"])({\n    dark: \"plugins/\" + appId + \"/css/\" + baseCssFilename + \".dark.css\",\n    light: \"plugins/\" + appId + \"/css/\" + baseCssFilename + \".light.css\"\n});\nvar ProjTaqniaPage2UpstreamPanelCtrl = /** @class */ (function (_super) {\n    __extends(ProjTaqniaPage2UpstreamPanelCtrl, _super);\n    function ProjTaqniaPage2UpstreamPanelCtrl($scope, $injector, $element) {\n        var _this = _super.call(this, $scope, $injector) || this;\n        _this.$element = $element;\n        _this.divID = \"taqnia-page2-upstream-panel\";\n        _this.events.on('panel-initialized', _this.onInitialized.bind(_this));\n        _this.events.on('data-received', _this.onDataReceived.bind(_this));\n        return _this;\n    }\n    Object.defineProperty(ProjTaqniaPage2UpstreamPanelCtrl.prototype, \"container\", {\n        get: function () { return this._container; },\n        set: function (container) { this._container = container; },\n        enumerable: true,\n        configurable: true\n    });\n    ProjTaqniaPage2UpstreamPanelCtrl.prototype.onInitialized = function () {\n        var node = this.$element.find(\"ng-transclude > div\");\n        if (node.length === 0) {\n            console.error(\"cannot find element id '#\" + this.divID + \"'\");\n            return;\n        }\n        this.container = node;\n    };\n    ProjTaqniaPage2UpstreamPanelCtrl.prototype.onDataReceived = function (dataList) {\n        console.log(dataList);\n    };\n    ProjTaqniaPage2UpstreamPanelCtrl.template = __webpack_require__(/*! ./partial/template.html */ \"./panels/pages/page2/upStream/partial/template.html\");\n    return ProjTaqniaPage2UpstreamPanelCtrl;\n}(grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__[\"MetricsPanelCtrl\"]));\n\n\n\n//# sourceURL=webpack:///./panels/pages/page2/upStream/module.ts?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PanelCtrl", function() { return ProjTaqniaPage2UpstreamPanelCtrl; });
+/* harmony import */ var grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! grafana/app/plugins/sdk */ "grafana/app/plugins/sdk");
+/* harmony import */ var grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../common */ "./panels/common/index.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+Object(grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__["loadPluginCss"])({
+    dark: "plugins/" + _common__WEBPACK_IMPORTED_MODULE_1__["appId"] + "/css/" + _common__WEBPACK_IMPORTED_MODULE_1__["baseCssFilename"] + ".dark.css",
+    light: "plugins/" + _common__WEBPACK_IMPORTED_MODULE_1__["appId"] + "/css/" + _common__WEBPACK_IMPORTED_MODULE_1__["baseCssFilename"] + ".light.css"
+});
+var ProjTaqniaPage2UpstreamPanelCtrl = /** @class */ (function (_super) {
+    __extends(ProjTaqniaPage2UpstreamPanelCtrl, _super);
+    function ProjTaqniaPage2UpstreamPanelCtrl($scope, $injector, $element) {
+        var _this = _super.call(this, $scope, $injector) || this;
+        _this.$element = $element;
+        _this.divID = "taqnia-page2-upstream-panel";
+        _this.events.on('panel-initialized', _this.onInitialized.bind(_this));
+        _this.events.on('data-received', _this.onDataReceived.bind(_this));
+        return _this;
+    }
+    Object.defineProperty(ProjTaqniaPage2UpstreamPanelCtrl.prototype, "container", {
+        get: function () { return this._container; },
+        set: function (container) { this._container = container; },
+        enumerable: true,
+        configurable: true
+    });
+    /* Angularjs(1.x) Initialize Function */
+    ProjTaqniaPage2UpstreamPanelCtrl.prototype.$onInit = function () {
+        console.log(this.divID + " onInited...");
+    };
+    ProjTaqniaPage2UpstreamPanelCtrl.prototype.onInitialized = function () {
+        var node = this.$element.find("ng-transclude > div");
+        if (node.length === 0) {
+            console.error("cannot find element id '#" + this.divID + "'");
+            return;
+        }
+        this.container = node;
+    };
+    ProjTaqniaPage2UpstreamPanelCtrl.prototype.onDataReceived = function (dataList) {
+        console.log(dataList);
+    };
+    ProjTaqniaPage2UpstreamPanelCtrl.template = __webpack_require__(/*! ./partial/template.html */ "./panels/pages/page2/upStream/partial/template.html");
+    return ProjTaqniaPage2UpstreamPanelCtrl;
+}(grafana_app_plugins_sdk__WEBPACK_IMPORTED_MODULE_0__["MetricsPanelCtrl"]));
+
+
 
 /***/ }),
 
@@ -105,7 +178,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"<div id=\\\"{{ctrl.divID}}\\\" class=\\\"app-taqnia-panel\\\">\\n    upstream\\n</div>\\n\";\n\n//# sourceURL=webpack:///./panels/pages/page2/upStream/partial/template.html?");
+module.exports = "<div id=\"{{ctrl.divID}}\" class=\"app-taqnia-panel\">\n    upstream\n</div>\n";
 
 /***/ }),
 
@@ -116,8 +189,9 @@ eval("module.exports = \"<div id=\\\"{{ctrl.divID}}\\\" class=\\\"app-taqnia-pan
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = __WEBPACK_EXTERNAL_MODULE_grafana_app_plugins_sdk__;\n\n//# sourceURL=webpack:///external_%22app/plugins/sdk%22?");
+module.exports = __WEBPACK_EXTERNAL_MODULE_grafana_app_plugins_sdk__;
 
 /***/ })
 
 /******/ })});;
+//# sourceMappingURL=module.js.map

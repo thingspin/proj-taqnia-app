@@ -1,7 +1,6 @@
 import { MetricsPanelCtrl, loadPluginCss } from 'grafana/app/plugins/sdk';
+import { appId, baseCssFilename } from "../../../common";
 
-const appId: String = "proj-taqnia-app";
-const baseCssFilename: String = "proj-xxx-app";
 loadPluginCss({
     dark: `plugins/${appId}/css/${baseCssFilename}.dark.css`,
     light: `plugins/${appId}/css/${baseCssFilename}.light.css`
@@ -22,7 +21,10 @@ class ProjTaqniaPage2DownstreamPanelCtrl extends MetricsPanelCtrl {
         this.events.on('data-received', this.onDataReceived.bind(this));
     }
 
-
+    /* Angularjs(1.x) Initialize Function */
+    $onInit(): void {
+        console.log(`${this.divID} onInited...`);
+    }
 
     onInitialized() {
         const node: any = this.$element.find("ng-transclude > div");

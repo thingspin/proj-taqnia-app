@@ -74,6 +74,10 @@ module.exports = {
         test: /\.less$/,
         exclude: /node_modules/,
         loaders: ["raw-loader", 'less-loader']
+      },
+      {
+        test: require.resolve('snapsvg'),
+        use: 'imports-loader?this=>window,fix=>module.exports=0',
       }
     ]
   }
