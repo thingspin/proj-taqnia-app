@@ -43,10 +43,11 @@ module.exports = {
       { from: '**/*.ttf' },
       { from: '**/*.woff' },
       { from: '**/*.html' },
+      { from: '**/imgs/**' },
     ]),
   ],
   resolve: {
-    extensions: [".ts", ".js", ".scss"]
+    extensions: [".ts", ".tsx", ".js", ".scss"]
   },
   module: {
     rules: [
@@ -58,7 +59,18 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loaders: ["ts-loader"],
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /vendor/],
+      },
+      {
+        test: /\.(jpg|png|gif)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: '[name].[ext]',
+            useRelativePath: true,
+            outputPath: "public/plugins/proj-taqnia-app/",
+          }
+        }
       },
       {
         test: /\.css$/,
@@ -68,7 +80,7 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loaders: ["raw-loader", 'sass-loader'] // sass-loader not scss-loader
+        loaders: ["style-loader", "css-loader", 'sass-loader'] // sass-loader not scss-loader
       },
       {
         test: /\.less$/,

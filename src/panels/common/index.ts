@@ -1,14 +1,10 @@
-import { MetricsPanelCtrl, loadPluginCss } from "grafana/app/plugins/sdk";
+import { MetricsPanelCtrl } from "grafana/app/plugins/sdk";
 import { IScope } from "angular";
 import "bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const appId: String = "proj-taqnia-app";
 export const baseCssFilename: String = "app";
-
-loadPluginCss({
-    dark: `plugins/${appId}/css/${baseCssFilename}.dark.css`,
-    light: `plugins/${appId}/css/${baseCssFilename}.light.css`,
-});
 
 export class BaseTsPanelPlugin extends MetricsPanelCtrl {
     private _container: JQLite;
@@ -34,5 +30,4 @@ export class BaseTsPanelPlugin extends MetricsPanelCtrl {
         }
         return node;
     }
-
 }

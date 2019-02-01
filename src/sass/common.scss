@@ -1,6 +1,11 @@
-@import './bootstrap-iso.css';
+// based dist directory
+@import "../vendor/dhtmlxSuite/codebase/dhtmlx.css";
 
 .timeline-cards {
     display: -webkit-inline-box;
     overflow: auto;
+}
+#accordion {
+    width: 100%;
+    height: 100%;
 }
